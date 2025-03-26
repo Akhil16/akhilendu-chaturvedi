@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   phrases: string[] =[
     "Team Player.",
     "Software Developer.",
-    "Backend Engineer.",
     "Software Engineer.",
     "Fullstack Developer.",
     "Code Enthusiast.",
@@ -33,6 +32,7 @@ export class HomeComponent implements OnInit {
   typingSpeed: number = 100;
   deletingSpeed: number = 100;
   delayBetweenPhrases: number = 2000;
+  years:number = 4; 
 
   constructor(private titleService: Title) {
     this.titleService.setTitle('AC | Home')
@@ -41,6 +41,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.type();
+    const date  = new Date();
+    this.years = date.getFullYear() - 2019;
   }
 
   type() {
